@@ -38,9 +38,9 @@ public class MyController {
     @FXML Label movie8;
     @FXML Label movie9;
     @FXML Label movie10;
-    List<String> movies_on_display = new Vector<String>();
-    // (movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10);
-    movies_on_display.add(movie1.getText());
+    // List<String> movies_on_display = new Vector<String>();
+    // // (movie1, movie2, movie3, movie4, movie5, movie6, movie7, movie8, movie9, movie10);
+    // movies_on_display.add(movie1.getText());
         // movies_on_display.add(movie2);
         // movies_on_display.add(movie3);
         // movies_on_display.add(movie4);
@@ -65,15 +65,31 @@ public class MyController {
      */
     @FXML protected void viewHistory(ActionEvent event) {
         System.out.println();
+        // CHANGE (FIX) from printing to terminal to printing to an error log.
         System.out.println("Fetching movie history from " + start_date_input.getText() + " to " + end_date_input.getText() + " ..."); // DEBUG
         String start_date = start_date_input.getText();
         String end_date = end_date_input.getText();
 
+        // makes request for recently watched movies as strings, which are put into a list.
         jdbcpostgreSQLGUI sqlcontroller = new jdbcpostgreSQLGUI();
         List<String> movies = sqlcontroller.getRecentTitles(start_date, end_date);
 
+        // Displays movies in 
+        movie1.setText(movies.get(0));
+        movie2.setText(movies.get(1));
+        movie3.setText(movies.get(2));
+        movie4.setText(movies.get(3));
+        movie5.setText(movies.get(4));
+        movie6.setText(movies.get(5));
+        movie7.setText(movies.get(6));
+        movie8.setText(movies.get(7));
+        movie9.setText(movies.get(8));
+        movie10.setText("");
 
-            
+        // CANT FIND LOOP THAT WORKS  -  rjk
+        // for(int i = 0; i < movies.size() && i < 10; i++) {
+        //     movies_on_display.get(i).setText("");
+        // }
         // for (int i = 0; i < movies.size(); ) {
         //     if(i+1)
         //     movie1.setText(movies.get(i));
@@ -87,22 +103,6 @@ public class MyController {
         //     movie9.setText(movies.get(8));
         //     movie10.setText("");
         // }
-
-        movie1.setText(movies.get(0));
-        movie1.setText(movies.get(0));
-        movie2.setText(movies.get(1));
-        movie3.setText(movies.get(2));
-        movie4.setText(movies.get(3));
-        movie5.setText(movies.get(4));
-        movie6.setText(movies.get(5));
-        movie7.setText(movies.get(6));
-        movie8.setText(movies.get(7));
-        movie9.setText(movies.get(8));
-        movie10.setText("");
-        // CANT FIND LOOP THAT WORKS
-        for(int i = 0; i < movies.size() && i < 10; i++) {
-            movies_on_display.get(i).setText("");
-        }
         // for(int i = 0; i < movies.size() && i < 10; i++) {
         //     movies_on_display[i].setText(movies.get(i));
         // }

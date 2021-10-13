@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+            <Menu fx:id="sort_by" mnemonicParsing="false" text="Sort By">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="A-Z" />
+                  <MenuItem mnemonicParsing="false" text="Z-A" />
+                  <MenuItem mnemonicParsing="false" text="High Ratings" />
+                  <MenuItem mnemonicParsing="false" text="Lowest Ratings" />
+                  <MenuItem mnemonicParsing="false" text="Newest" />
+                  <MenuItem mnemonicParsing="false" text="Oldest" />
+               </items>
+            </Menu>
+            <Menu fx:id="admin" mnemonicParsing="false" text="Admin">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Viewer" />
+                  <MenuItem mnemonicParsing="false" text="Analyst" />
+               </items>
+            </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label fx:id="movie5" alignment="CENTER" layoutX="162.0" layoutY="141.0" prefHeight="84.0" prefWidth="114.0" text="movie 5" textAlignment="CENTER" />
+            <Label fx:id="movie6" alignment="CENTER" layoutX="276.0" layoutY="141.0" prefHeight="84.0" prefWidth="114.0" text="movie 6" textAlignment="CENTER" />
+            <Label fx:id="movie4" alignment="CENTER" layoutX="497.0" layoutY="57.0" prefHeight="84.0" prefWidth="114.0" text="movie 4" textAlignment="CENTER" />
+            <Label fx:id="movie3" alignment="CENTER" layoutX="383.0" layoutY="57.0" prefHeight="84.0" prefWidth="114.0" text="movie 3" textAlignment="CENTER" />
+            <Label fx:id="movie1" alignment="CENTER" layoutX="162.0" layoutY="57.0" prefHeight="84.0" prefWidth="114.0" text="movie 1" textAlignment="CENTER" />
+            <Label fx:id="movie2" alignment="CENTER" layoutX="276.0" layoutY="57.0" prefHeight="84.0" prefWidth="114.0" text="movie 2" textAlignment="CENTER" />
+            <Label fx:id="movie7" alignment="CENTER" layoutX="383.0" layoutY="141.0" prefHeight="84.0" prefWidth="114.0" text="movie 7" textAlignment="CENTER" />
+            <Label fx:id="movie8" alignment="CENTER" layoutX="497.0" layoutY="141.0" prefHeight="84.0" prefWidth="114.0" text="movie 8" textAlignment="CENTER" />
+            <Button fx:id="button_next" layoutX="567.0" layoutY="336.0" mnemonicParsing="false" text="Next" />
+            <Button fx:id="button_previous" layoutX="494.0" layoutY="336.0" mnemonicParsing="false" text="previous" />
+            <TextField fx:id="search_bar" layoutX="459.0" layoutY="16.0" promptText="Search.." />
+            <TextField fx:id="start_date_input" layoutX="18.0" layoutY="245.0" prefHeight="25.0" prefWidth="96.0" promptText="Start date" />
+            <TextField fx:id="end_date_input" layoutX="18.0" layoutY="280.0" prefHeight="25.0" prefWidth="96.0" promptText="End date" />
+            <Button fx:id="button_viewhistory" layoutX="25.0" layoutY="323.0" mnemonicParsing="false" onAction="#viewHistory" text="View History" />
+            <Button fx:id="button_home" layoutX="25.0" layoutY="16.0" mnemonicParsing="false" text="Home" />
+            <Label fx:id="movie9" alignment="CENTER" layoutX="276.0" layoutY="222.0" prefHeight="84.0" prefWidth="114.0" text="movie 9" textAlignment="CENTER" />
+            <Label fx:id="movie10" alignment="CENTER" layoutX="383.0" layoutY="222.0" prefHeight="84.0" prefWidth="114.0" text="movie 10" textAlignment="CENTER" />
+            <Separator layoutX="133.0" orientation="VERTICAL" prefHeight="375.0" prefWidth="5.0" />
+            <Separator layoutX="133.0" layoutY="57.0" prefHeight="0.0" prefWidth="507.0" />
+            <Label fx:id="Scene_title" layoutX="145.0" layoutY="16.0" prefHeight="25.0" prefWidth="114.0" text="History" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>

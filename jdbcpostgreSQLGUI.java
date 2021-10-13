@@ -50,8 +50,8 @@ public class jdbcpostgreSQLGUI {
     try{
         Statement stmt = conn.createStatement();
         //create an SQL statement
-        String sqlStatement = "SELECT titles.originaltitle, titles.startyear FROM titles ORDER BY numvotes DESC LIMIT 10;";
-        //String sqlStatement = "SELECT titles.originaltitle FROM custumer_ratings INNER JOIN titles ON custumer_ratings.title_id= titles.titleid WHERE custumer_ratings.date >= \'9/1/2005\' AND custumer_ratings.date <= \'9/6/2005\' AND custumer_ratings.custumer_id = 1227322;";
+        String sqlStatement = "SELECT originaltitle, startyear FROM titles WHERE startyear >= 1999 AND startyear <= 2000 ORDER BY numvotes DESC LIMIT 10;";
+        //String sqlStatement = "SELECT originaltitle FROM titles WHERE startyear >= " + fxml.startDate + " AND fxml.endDate <= " + end_year + " ORDER BY numvotes DESC LIMIT 10;";
         //send statement to DBMS
         ResultSet result = stmt.executeQuery(sqlStatement);
         
